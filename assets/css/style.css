@@ -1,0 +1,20 @@
+
+
+* {
+	box-sizing: border-box;
+}
+
+#logo {
+	width: 300px;
+}
+
+.jumbotron {
+	text-align: center;
+	margin-bottom: auto;
+	padding-bottom: 25px;
+	padding-top: 25px;
+	margin-right: 10%;
+	margin-left: 10%;
+	margin: 0 auto;
+	margin-bottom: 30px;
+}
