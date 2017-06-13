@@ -1,12 +1,6 @@
 
-
-
-
 $(document).ready(function(){
   
-
-
-
   // Initialize Firebase
   var config = {
     apiKey: "AIzaSyC-x883cY6lvfEfURn6a8WmGcoY37wZ1mo",
@@ -18,9 +12,7 @@ $(document).ready(function(){
   };
   firebase.initializeApp(config);
 
-
-  
- var database = firebase.database();
+  var database = firebase.database();
 
 
   // on click function to submit data
@@ -32,17 +24,17 @@ $(document).ready(function(){
 
       //pushing input to firebase
       database.ref().push({
-      name: name,
-      destination: destination,
-      time: time,
-      frequency: frequency
+        name: name,
+        destination: destination,
+        time: time,
+        frequency: frequency
       })
-        //clear input after submitting
+         //clear input after submitting
         $("input").val('');
         return false;
 });
 
-  //  on click child added function
+   //  on click child added function
   database.ref().on("child_added", function(childSnapshot){
       // getting firebase data
       var name = childSnapshot.val().name;
@@ -70,7 +62,7 @@ $(document).ready(function(){
     console.log(tRemainder);
     // time until next train
     var minTilTrain = frequency - tRemainder;
-    console.log("MINUTES TIL TRAIN: " + minTilTrain);
+    console.log("MINUTES TILL TRAIN: " + minTilTrain);
     // next train
     var nextTrain = moment().add(minTilTrain, "minutes").format("hh:mm");
     console.log("ARRIVAL TIME: " + moment(nextTrain).format("hh:mm"));  
